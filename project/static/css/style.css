@@ -1,0 +1,68 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent
+}
+
+@-ms-viewport {
+    width: device-width
+}
+
+body {
+    color: green;
+    position: relative;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 2px;
+    font-weight: normal;
+    overflow-x: hidden;
+}
+
+/*---- NAVBAR ----------*/
+nav{
+    display: block;
+    background-color: #cad2c5;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    color: #354f52;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    backdrop-filter: blur(14px);
+}
+
+.navbar-brand{
+    color: #354f52;
+    font-weight: 800;
+}
+.navbar-brand span{
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav-link{
+    color: #354f52 !important;
+}
