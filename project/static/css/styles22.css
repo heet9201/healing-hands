@@ -1,0 +1,83 @@
+#banner_ {
+    position: relative;
+    height: 80%;
+}
+
+.carousel-item{
+    height: 600px;
+    width: 80%;
+    object-fit: cover;
+    /* display: flex;    */
+    position: relative;
+
+}
+
+
+.container_about img-class{
+    object-fit: cover;
+}
+
+.about-content {
+    color: var(--sec-color);
+    padding-top: 20px;
+}
+
+#about {
+    background: var(--pri-color);
+    padding: 50px 0px;
+    color: #555;
+    margin-top: 30px;
+}
+
+#about .container_about {
+    width: 90%;
+    margin: 0 8% 0 8%;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-6 img{
+    position: relative;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.about button {
+    margin-top : 20px;
+}
+
+.side-content{
+    margin-right: 50px;
+}
+
+#blog{
+    margin: 0% 15%;
+}
+
+.ft1{
+    height: 30px;
+    width: 50%;
+    transform: scale(0.6);
+    margin-bottom: 100px;
+}
+
+.our {
+    background-color: var(--pri-color);
+    padding-top: 80px;
+}
+
+.our .Games {
+    text-align: left;
+}
+
+.our .Games {
+    text-align: left;
+}
