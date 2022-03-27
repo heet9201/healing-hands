@@ -26,12 +26,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'n+$=k7zts-sccl*&6e6c1s=a!&(z^ip%eq53edz*fk!s0ra#gw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ['*']
+EMAIL_HOST = 'stmp.gmail.com'
+EMAIL_HOST_USER = 'youremail@gmail.com'
+EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FORM_EMAIL = "Justin <hungrypy@gmail.com>"
 
+ADMINS = [('Justin', EMAIL_HOST_USER)]
+MANAGERS = ADMINS
 
 # Application definition
 

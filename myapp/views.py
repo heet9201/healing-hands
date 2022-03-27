@@ -1,19 +1,26 @@
 from io import StringIO
+from re import template
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.views.generic import View, FormView
+from myapp.forms import JoinForm
 # from .models import Person
 
 # Create your views here.
+
+
 def index(request):
     # name = 'John'
     # messages.info(request, "This is a index")
     return render(request, 'index.html')
 
+
 def signup(request):
     # messages.info(request, "This is a signup page")
     return render(request, 'loginpage.html')
+
 
 def loginpage(request):
     if request.method == 'POST':
@@ -24,7 +31,6 @@ def loginpage(request):
         username = request.POST['username']
         password = request.POST['password']
 
-
         # if User.objects.filter(username = username).exists():
         #     messages.info(request, "Username is already exists")
         #     return redirect('loginpage')
@@ -34,14 +40,14 @@ def loginpage(request):
         #     messages.info(request, "What are you doing?, do it right you stupid!!!!")
         #     return redirect('login')
 
-
-        if User.objects.filter(username = username).exists():
-                return redirect('loginpage')
-        elif User.objects.filter(email = email).exists():
+        if User.objects.filter(username=username).exists():
+            return redirect('loginpage')
+        elif User.objects.filter(email=email).exists():
             return redirect('loginpage')
         else:
             # if (User.objects.create_user(username = None, password = None, email = None)):
-            new_user = User.objects.create_user(username = username, password = password, email = email)
+            new_user = User.objects.create_user(
+                username=username, password=password, email=email)
             # new_user = User.objects.create_user(username, password)
             new_user.is_active = True
             # new_user.first_name = first_name
@@ -60,12 +66,14 @@ def loginpage(request):
         return render(request, 'loginpage.html')
 
 # @csrf_excenpt........
+
+
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
 
-        user = auth.authenticate(username = username, password = password)
+        user = auth.authenticate(username=username, password=password)
 
         if user is not None:
             auth.login(request, user)
@@ -77,18 +85,29 @@ def login(request):
         # messages.info(request, "What are you doing!!!")
         return render(request, 'loginpage.html')
 
+
 def logout(request):
     auth.logout(request)
     return redirect('/')
 
+
 def page_01(request):
     return render(request, 'pages/page_01.html')
+
 
 def page_02(request):
     return render(request, 'pages/page_02.html')
 
+
 def page_03(request):
     return render(request, 'pages/page_03.html')
 
+
 def page_04(request):
     return render(request, 'pages/page_04.html')
+
+
+class HomeView(FormView):
+    template_name = 'index.html'
+    form_class = JoinForm
+    success_url = '/'
