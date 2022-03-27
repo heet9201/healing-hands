@@ -1,1 +1,5 @@
-# healing-hands
+# Clubs
+
+# Contributors
+- Heet
+- Rajan
