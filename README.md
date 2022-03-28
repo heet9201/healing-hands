@@ -1,5 +1,1 @@
-# Clubs
 
-# Contributors
-- Heet
-- Rajan
